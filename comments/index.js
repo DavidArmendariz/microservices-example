@@ -24,7 +24,7 @@ app.post(
     const comments = commentsByPostId[req.params.id] || [];
     comments.push({ id: commentId, content });
     commentsByPostId[req.params.id] = comments;
-    await axios.post("http://localhost:4045/events", {
+    await axios.post("http://localhost:4005/events", {
       type: "CommentCreated",
       data: {
         id: commentId,
