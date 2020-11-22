@@ -4,10 +4,11 @@ This is a repo intended to show an app built with microservices.
 
 Here you will find:
 
-- The client (built with React)
-- A posts microservice (built with Express)
-- A comments microservice (built with Express)
-- An very simple event bus to handle asynchronous communication
+- The React client
+- A posts microservice
+- A comments microservice
+- A very simple event bus to handle asynchronous communication
+- A query microservice that will have all the information of posts and comments joined together
 
 To run everything at the same time, first run `yarn install` and then:
 
