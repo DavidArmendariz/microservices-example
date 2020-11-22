@@ -7,7 +7,8 @@
     "start:comments": "cd comments && yarn start",
     "start:posts": "cd posts && yarn start",
     "start:event-bus": "cd event-bus && yarn start",
-    "start:all": "run-p start:comments start:posts start:event-bus start:client"
+    "start:query": "cd query && yarn start",
+    "start:all": "run-p start:comments start:posts start:event-bus start:client start:query"
   },
   "comments": {
     "scripts": {
