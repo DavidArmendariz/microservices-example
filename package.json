@@ -8,7 +8,13 @@
     "start:posts": "cd posts && yarn start",
     "start:event-bus": "cd event-bus && yarn start",
     "start:query": "cd query && yarn start",
-    "start:all": "run-p start:comments start:posts start:event-bus start:client start:query"
+    "start:all": "run-p start:comments start:posts start:event-bus start:client start:query",
+    "install:client": "cd client && yarn",
+    "install:comments": "cd comments && yarn",
+    "install:posts": "cd posts && yarn",
+    "install:event-bus": "cd event-bus && yarn",
+    "install:query": "cd query && yarn",
+    "install:all": "run-p install:client install:comments install:posts install:event-bus install:query"
   },
   "comments": {
     "scripts": {

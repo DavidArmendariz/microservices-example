@@ -10,8 +10,10 @@ Here you will find:
 - A very simple event bus to handle asynchronous communication
 - A query microservice that will have all the information of posts and comments joined together
 
-To run everything at the same time, first run `yarn install` and then:
+To get started, run these three commands:
 
 ```zsh
+yarn install
+yarn install:all
 yarn start:all
 ```
