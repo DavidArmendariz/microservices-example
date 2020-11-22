@@ -1,0 +1,22 @@
+{
+  "name": "microservices-course",
+  "version": "1.0.0",
+  "description": "Repo for an example of an app built with microservices",
+  "scripts": {
+    "start:client": "cd client && yarn start",
+    "start:comments": "cd comments && yarn start",
+    "start:posts": "cd posts && yarn start",
+    "start:event-bus": "cd event-bus && yarn start",
+    "start:all": "run-p start:comments start:posts start:event-bus start:client"
+  },
+  "keywords": [
+    "microservices",
+    "nodejs",
+    "express"
+  ],
+  "author": "David Armendariz",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
