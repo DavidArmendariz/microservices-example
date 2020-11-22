@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "Repo for an example of an app built with microservices",
   "scripts": {
-    "start:client": "cd client && yarn start",
+    "start:client": "cd client && FORCE_COLOR=true yarn start | cat",
     "start:comments": "cd comments && yarn start",
     "start:posts": "cd posts && yarn start",
     "start:event-bus": "cd event-bus && yarn start",
     "start:all": "run-p start:comments start:posts start:event-bus start:client"
+  },
+  "comments": {
+    "scripts": {
+      "start:client": "We use this hack found in https://github.com/facebook/create-react-app/issues/2495 so the console does not get cleared"
+    }
   },
   "keywords": [
     "microservices",
