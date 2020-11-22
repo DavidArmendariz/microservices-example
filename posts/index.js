@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const { randomBytes } = require("crypto");
 const cors = require("cors");
 const axios = require("axios");
+const asyncHandler = require("express-async-handler");
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,26 +15,33 @@ app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-app.post("/posts", async (req, res) => {
-  const id = randomBytes(4).toString("hex");
-  const { title } = req.body;
-  posts[id] = {
-    id,
-    title,
-  };
-  await axios.post("http://localhost:4005/events", {
-    type: "PostCreated",
-    data: {
+app.post(
+  "/posts",
+  asyncHandler(async (req, res) => {
+    const id = randomBytes(4).toString("hex");
+    const { title } = req.body;
+    posts[id] = {
       id,
       title,
-    },
-  });
-  res.status(201).send(posts[id]);
-});
+    };
+    await axios.post("http://localhost:4005/events", {
+      type: "PostCreated",
+      data: {
+        id,
+        title,
+      },
+    });
+    res.status(201).send(posts[id]);
+  })
+);
 
 app.post("/events", (req, res) => {
-  console.log("[posts] Received Event:", req.body.type);
+  console.log("[posts] Event Received:", req.body.type);
   res.send({});
+});
+
+app.use((err, req, res, next) => {
+  console.error("[posts]", err.stack);
 });
 
 app.listen(4000, () => {

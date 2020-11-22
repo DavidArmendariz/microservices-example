@@ -13,6 +13,10 @@ app.post("/events", (req, res) => {
   res.send({ status: "OK" });
 });
 
+app.use((err, req, res, next) => {
+  console.error("[event-bus]", err.stack);
+});
+
 app.listen(4005, () => {
   console.log("Listening on 4005");
 });
