@@ -9,6 +9,7 @@ Here you will find:
 - A comments microservice
 - A very simple event bus to handle asynchronous communication
 - A query microservice that will have all the information of posts and comments joined together
+- A moderation microservice that moderates comments
 
 To get started, run these three commands:
 
