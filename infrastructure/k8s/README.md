@@ -38,3 +38,10 @@ kubectl delete -f [config_file]
 - `kubectl describe deployment [depl_name]`
 - `kubectl delete deployment [depl_name]`
 - `kubectl rollout restart deployment [depl_name]`
+
+## Services
+
+- `kubectl get services`
+- `kubectl describe service [service_name]`
+
+With Minikube, you can retrieve the IP address of the running cluster with `minikube ip`
