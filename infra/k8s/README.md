@@ -10,37 +10,31 @@ We can achieve this by running:
 eval $(minikube docker-env)
 ```
 
-To use the config files inside `infra/k8s/`:
+## Config files
+
+To use a config file:
 
 ```zsh
-kubectl apply -f infra/k8s/
+kubectl apply -f [config_file]
 ```
 
-To get the pods:
+To delete the objects created by the config file:
 
 ```zsh
-kubectl get pods
+kubectl delete -f [config_file]
 ```
 
-To delete the objects created by the config file in `infra/k8s/`:
+## Pods
 
-```zsh
-kubectl delete -f infra/k8s/
-```
-
-## Other commands
-
-The `docker ps` command would be equivalent to `kubectl get pods`
-
-The `docker exec -it [container_id] [cmd]` command would be equivalent to `kubectl exec -it [pod_name] [cmd]`
-
-The `docker logs [container_id]` command would be equivalent to `kubectl logs [pod_name]`
-
-We have several other commands like:
-
-- `kubectl delete pod [pod_name]`
-- `kubectl apply -f [config_file]`
+- `kubectl get pods`
 - `kubectl describe pod [pod_name]`
+- `kubectl exec -it [pod_name] [cmd]`
+- `kubectl logs [pod_name]`
+- `kubectl delete pod [pod_name]`
+
+## Deployments
+
 - `kubectl get deployments`
 - `kubectl describe deployment [depl_name]`
 - `kubectl delete deployment [depl_name]`
+- `kubectl rollout restart deployment [depl_name]`
