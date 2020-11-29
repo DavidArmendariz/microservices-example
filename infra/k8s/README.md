@@ -41,3 +41,6 @@ We have several other commands like:
 - `kubectl delete pod [pod_name]`
 - `kubectl apply -f [config_file]`
 - `kubectl describe pod [pod_name]`
+- `kubectl get deployments`
+- `kubectl describe deployment [depl_name]`
+- `kubectl delete deployment [depl_name]`
