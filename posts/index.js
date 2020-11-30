@@ -16,7 +16,7 @@ app.get("/posts", (req, res) => {
 });
 
 app.post(
-  "/posts",
+  "/posts/create",
   asyncHandler(async (req, res) => {
     const id = randomBytes(4).toString("hex");
     const { title } = req.body;

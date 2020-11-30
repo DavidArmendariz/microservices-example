@@ -2,13 +2,13 @@
 
 ## Basic commands
 
-First, we need to tell Kubernetes to use the Docker daemon running **inside** of the single node cluster instead of the host's.
-
-We can achieve this by running:
+If we want to use the Docker daemon running **inside** of the single node cluster instead of the host's, we can achieve this by running the following command:
 
 ```zsh
 eval $(minikube docker-env)
 ```
+
+This is not necessary if we are pulling images from Docker Hub.
 
 ## Config files
 
