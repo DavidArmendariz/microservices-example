@@ -45,3 +45,8 @@ kubectl delete -f [config_file]
 - `kubectl describe service [service_name]`
 
 With Minikube, you can retrieve the IP address of the running cluster with `minikube ip`
+
+## Ingress
+
+- `kubectl get ingress`
+- `kubectl delete ingress [ingress_name]`
