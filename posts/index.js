@@ -36,15 +36,14 @@ app.post(
 );
 
 app.post("/events", (req, res) => {
-  console.log("[posts] Event Received:", req.body.type);
+  console.log("[posts - POST /events] Event Received:", req.body.type);
   res.send({});
 });
 
 app.use((err, req, res, next) => {
-  console.error("[posts]", err.stack);
+  console.error("[posts - error]", err.stack);
 });
 
 app.listen(4000, () => {
-  console.log("Posts microservice is ready!");
   console.log("Listening on 4000");
 });

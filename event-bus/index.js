@@ -22,7 +22,7 @@ app.get("/events", (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error("[event-bus]", err.stack);
+  console.error("[event-bus - error]", err.stack);
 });
 
 app.listen(4005, () => {

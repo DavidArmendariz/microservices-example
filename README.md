@@ -11,10 +11,12 @@ Here you will find:
 - A query microservice that will have all the information of posts and comments joined together
 - A moderation microservice that moderates comments
 
-To get started, run these three commands:
+## Getting started
+
+To get started, you need to install Skaffold. Then simply run:
 
 ```zsh
-yarn install
-yarn install:all
-yarn start:all
+skaffold dev
 ```
+
+This will take care to sync all of our changes inside the our local k8s cluster. Remember that all of the configuration of k8s can be found inside `/infrastructure/k8s/`

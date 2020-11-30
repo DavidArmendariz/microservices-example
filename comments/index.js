@@ -39,7 +39,7 @@ app.post(
 app.post(
   "/events",
   asyncHandler(async (req, res) => {
-    console.log("[comments] Event Received:", req.body.type);
+    console.log("[comments - POST /events] Event Received:", req.body.type);
     const { type, data } = req.body;
     if (type === "CommentModerated") {
       const { postId, id, status, content } = data;
@@ -63,7 +63,7 @@ app.post(
 );
 
 app.use((err, req, res, next) => {
-  console.error("[comments]", err.stack);
+  console.error("[comments - error]", err.stack);
 });
 
 app.listen(4001, () => {

@@ -41,7 +41,7 @@ app.post("/events", (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error("[query]", err.stack);
+  console.error("[query - error]", err.stack);
 });
 
 app.listen(4002, async () => {
